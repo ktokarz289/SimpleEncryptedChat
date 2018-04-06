@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/SimpleEncryptedChatClient/SimpleEncryptedChatClient.csproj"
+                "${workspaceFolder}/SimpleEncryptedChatServer.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
