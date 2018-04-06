@@ -8,13 +8,14 @@ namespace SimpleEncryptedChatClient
     {
         static void Main(string[] args)
         {
+            var message = String.Empty;
             Console.WriteLine("Enter a message to send");
-            var message = Console.ReadLine();
             while (message != "q")
             {
-                using(var client = new UdpClient(9000))
+                message = Console.ReadLine();
+                using(var client = new UdpClient())
                 {
-                    client.Connect("127.0.0.1", 9000);
+                    client.Connect(IPAddress.Parse("127.0.0.1"), 9000);
                     Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
                     client.Send(data, data.Length);
                 }
